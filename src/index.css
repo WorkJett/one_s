@@ -41,6 +41,13 @@ th, td {
 td {
   border: 1px solid #69899F;
 }
+td.highlighted {
+  background-color: #bfdfff;
+}
+td.active {
+  background-color: #ffc2a3;
+}
 th {
   background:#eee;
+  cursor: pointer;
 }

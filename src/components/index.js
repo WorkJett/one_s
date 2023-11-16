@@ -1,1 +1,5 @@
+export {Cell} from './cell'
+export {Row} from './row'
+export {Column} from './column'
+export {Table} from './table'
 export {App} from './app'
