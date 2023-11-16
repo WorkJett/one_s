@@ -40,12 +40,16 @@ th, td {
 }
 td {
   border: 1px solid #69899F;
+  cursor: pointer;
 }
 td.highlighted {
   background-color: #bfdfff;
 }
 td.active {
   background-color: #ffc2a3;
+}
+td.selected {
+  background-color: #f7a9a3;
 }
 th {
   background:#eee;

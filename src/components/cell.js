@@ -1,7 +1,12 @@
 import {useOneSContext} from 'lib'
 
 export const Cell = ({cell}) => {
-  const {col, row} = useOneSContext()
+  const {
+    col,
+    row,
+    selected,
+    on_select_cell
+  } = useOneSContext()
 
   const {
     col_idx,
@@ -15,11 +20,15 @@ export const Cell = ({cell}) => {
     return ''
   }
 
+  const get_cls_by_selected = () => {
+    return selected.includes(cell) ? 'selected' : ''
+  }
+
   const get_cls = () => {
-    return `${get_cls_by_header()}`
+    return `${get_cls_by_header()} ${get_cls_by_selected()}`
   }
 
   return (
-    <td className={get_cls()}>{content}</td>
+    <td onClick={on_select_cell(cell)} className={get_cls()}>{content}</td>
   )
 }
