@@ -9,18 +9,19 @@ for (let i = 0; i < 100; i++) {
 }
 
 export const table = {
-  columns: x_range.map(col_idx => ({
-    id: col_idx,
-    title: `Column #${col_idx}`
+  columns: x_range.map(col_id => ({
+    id: col_id,
+    title: `Column #${col_id}`
   })),
-  rows: y_range.map(row_idx => ({
-    id: row_idx,
-    title: `Row ${row_idx}`,
-    data: x_range.map(col_idx => ({
-      id: `datum_${row_idx}_${col_idx}`,
-      col_idx,
-      row_idx,
-      content: `Data ${row_idx} ${col_idx}`
+  rows: y_range.map((row_id, idx) => ({
+    id: row_id,
+    idx,
+    title: `Row ${row_id}`,
+    data: x_range.map(col_id => ({
+      id: `datum_${row_id}_${col_id}`,
+      col_idx: col_id,
+      row_idx: row_id,
+      content: `Data ${row_id} ${col_id}`
     }))
   }))
 }
