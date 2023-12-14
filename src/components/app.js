@@ -2,6 +2,7 @@ import {useState, useRef, useEffect} from 'react'
 import Table from 'lib/table'
 import {AppProvider, TableProvider} from 'lib'
 import {Table as TableComponent} from 'components'
+import {SideBar} from 'components'
 
 import {
   useAppContext,
@@ -11,6 +12,8 @@ import {
 const tables = []
 const table1 = new Table(0)
 const table2 = new Table(1)
+table1.clear_other = table2.clear_all.bind(table2)
+table2.clear_other = table1.clear_all.bind(table1)
 tables.push(table1)
 tables.push(table2)
 
@@ -70,6 +73,7 @@ export const App = () => {
         <TableProvider table={table2}>
           <TableComponent />
         </TableProvider>
+        <SideBar />
       </AppProvider>
     </div>
   )

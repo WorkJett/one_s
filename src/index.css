@@ -90,6 +90,7 @@ td {
   line-height: 24px;
   border: 1px solid #d9d9d9;
   cursor: pointer;
+  overflow: hidden;
 }
 td.highlighted {
   background-color: #bfdfff;
@@ -111,4 +112,112 @@ td.sel_bottom {
 }
 td.sel_left {
   border-left: 1px solid #fc1c03;
+}
+.side-bar__menu_btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 16px;
+  border: 1px solid #bfbfbf;
+  background: #ffffff;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 40px;
+  right: 40px;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.side-bar__menu_btn > img {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  object-position: center;
+}
+
+.side_bar__menu {
+  position: fixed;
+  width: 400px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: #ffffff;
+  border-left: 1px solid #bfbfbf;
+  z-index: 2;
+}
+
+.side_bar__close_btn {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  border-radius: 16px;
+  border: 1px solid #bfbfbf;
+  background: #ffffff;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 40px;
+  right: 40px;
+  cursor: pointer;
+}
+
+.side_bar__close_btn > img {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  object-position: center;
+}
+
+.side_bar__modes {
+  margin: 24px 0 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.side_bar__mode_btn {
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #bfbfbf;
+  cursor: pointer;
+}
+.side_bar__mode_btn > img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  object-position: center;
+}
+.side_bar__urls {
+  margin-top: 24px;
+}
+.side_bar__url {
+  margin-top: 12px;
+  display: flex;
+}
+.side_bar__label {
+  width: 120px;
+  height: 18px;
+  text-align: right;
+  line-height: 18px;
+}
+.side_bar__input {
+  margin-left: 12px;
+  width: 180px;
+}
+.side_bar__load_btn {
+  margin-top: 24px;
+  text-align: center;
+}
+.cell-editor {
+  width: 100%;
+  height: 24px;
+  line-height: 24px;
+  border: none;
+  outline: none;
 }

@@ -11,7 +11,7 @@ export const
   MODE_VER = 'mode_ver'
 
 export const AppProvider = ({children, tables, width, height}) => {
-  const [mode, set_mode] = useState(MODE_HOR)
+  const [mode, set_mode] = useState(MODE_SIN)
   const [mid, set_mid] = useState(0)
 
   const value = {

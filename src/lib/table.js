@@ -10,6 +10,7 @@ for (let i = 0; i < 100; i++) {
 
 export default class Table {
   idx
+  clear_other
   columns = []
   rows = []
 
@@ -56,8 +57,7 @@ export default class Table {
         id: `cell_${row_id}_${col_id}`,
         col_idx: col_idx,
         row_idx: row_idx,
-        content: '',
-        //content: `Data ${row_id} ${col_id}`,
+        set_content: () => {},
         set_is_hl: () => {},
         set_is_sel_top: () => {},
         set_is_sel_right: () => {},
@@ -122,6 +122,7 @@ export default class Table {
   }
 
   hl_col_start(idx) {
+    if (this.clear_other) this.clear_other()
     this.clear_hl_rows()
     this.clear_sel()
     this.is_hl_col = true
@@ -155,6 +156,7 @@ export default class Table {
   }
 
   hl_row_start(idx) {
+    if (this.clear_other) this.clear_other()
     this.clear_hl_cols()
     this.clear_sel()
     this.is_hl_row = true
@@ -296,6 +298,7 @@ export default class Table {
   }
 
   sel_start(col_idx, row_idx) {
+    if (this.clear_other) this.clear_other()
     this.clear_hl_cols()
     this.clear_hl_rows()
     this.clear_sel()
@@ -340,5 +343,11 @@ export default class Table {
     const delta = x_pos - this.resize_col.begin_pos
     if (this.resize_col.width + delta <= 120) return
     this.columns[this.resize_col.col_idx].set_width(this.resize_col.width + delta)
+  }
+
+  clear_all() {
+    this.clear_hl_cols()
+    this.clear_hl_rows()
+    this.clear_sel()
   }
 }
